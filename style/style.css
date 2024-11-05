@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "custom";
+    src: url(./CantonaZalone.otf);
+}
+
+body{
+    color: black;
+    font-size: 1.7rem;
+    font-family: "custom", sans-serif;
+    background-color: lightgrey;
+    /*background-image: url("../asset/alpesAsset.jpg");*/
+}
