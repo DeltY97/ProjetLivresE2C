@@ -10,3 +10,8 @@ body{
     background-color: lightgrey;
     /*background-image: url("../asset/alpesAsset.jpg");*/
 }
+
+header {
+    color: rgb(206, 117, 84);
+    background-color: darkslateblue;
+}
