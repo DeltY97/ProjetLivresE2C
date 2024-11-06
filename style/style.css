@@ -1,17 +1,41 @@
 @font-face {
     font-family: "custom";
-    src: url(./CantonaZalone.otf);
-}
+    src: url(./ImpactStone.otf);}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
 
 body{
     color: black;
     font-size: 1.7rem;
     font-family: "custom", sans-serif;
     background-color: lightgrey;
-    /*background-image: url("../asset/alpesAsset.jpg");*/
-}
+    /*background-image: url("../asset/alpesAsset.jpg");*/}
 
 header {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+
     color: rgb(206, 117, 84);
     background-color: darkslateblue;
+    height: 30vh;}
+
+h1, h2{
+    width: fit-content;}
+
+#logo{
+    height: 100%;
+    float: left;}
+
+#titre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-right: 20%;
 }
