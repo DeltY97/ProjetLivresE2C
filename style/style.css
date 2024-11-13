@@ -8,10 +8,10 @@
     box-sizing: border-box;}
 
 body{
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 1.7rem;
     font-family: "custom", sans-serif;
-    background-color: lightgrey;
+    background-color: rgb(211, 211, 211);
     /*background-image: url("../asset/alpesAsset.jpg");*/}
 
 header {
@@ -20,9 +20,15 @@ header {
     align-items: stretch;
     justify-content: space-between;
 
-    color: rgb(206, 117, 84);
-    background-color: darkslateblue;
-    height: 30vh;}
+    color: rgb(232, 235, 72);
+    background-color: rgb(72, 61, 139);
+    height: 20vh;
+
+    position: fixed;
+    width: 100vw;
+
+    z-index: 1;
+}
 
 h1, h2{
     width: fit-content;}
@@ -37,5 +43,56 @@ h1, h2{
     align-items: center;
     justify-content: space-evenly;
     width: 80%;
-    margin-right: 20%;
+    margin-right: 20%;}
+
+main{
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    top: 20vh;
 }
+
+article {
+width: 60%; background-color: rgba(255, 255, 255, 0.361);
+padding: 15px;
+box-shadow: rgb(0, 0, 0) 40px 25px 90px 0px;
+border-radius: 20px;
+margin: 70px;}
+
+ul{
+    margin-left: 30px;}
+
+#entre-terre{
+    aspect-ratio: 1904/640;
+    width: 100vw;
+    background-image: url('../asset/library.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position-y: 16vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+#entre-terre>h2{
+    font-size: 5rem;
+    padding-right: 5vw;
+    color: rgb(211, 211, 211);
+}
+
+nav{
+    width: 25vh;
+    height: 38vw;   
+    background-color: rgb(72, 61, 139);
+    margin-top: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 1;}
+
