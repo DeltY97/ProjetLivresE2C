@@ -27,8 +27,7 @@ header {
     position: fixed;
     width: 100vw;
 
-    z-index: 1;
-}
+    z-index: 1;}
 
 h1, h2{
     width: fit-content;}
@@ -77,13 +76,11 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: end;
-    justify-content: center;
-}
+    justify-content: center;}
 #entre-terre>h2{
     font-size: 5rem;
     padding-right: 5vw;
-    color: rgb(211, 211, 211);
-}
+    color: rgb(211, 211, 211);}
 
 nav{
     width: 25vh;
@@ -95,7 +92,10 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
-    z-index: 1;}
+    left: -25vh; /*si données du left pas mm unités => calc(-width - margin-left) pour faire le calcul automatiquement*/
+    z-index: 1;
+    transition: left 0.2s;
+}
 
 .bouton{
     display: block;
@@ -111,11 +111,37 @@ nav{
     color: rgb(211, 211, 211);
     box-shadow: rgb(211, 211, 211) 2px 2px 5px 0;
     transition: border-shadow 500ms*/
-    transition: background-color 1000ms, color 500ms, border 2000ms;
-}
+    transition: background-color 1000ms, color 500ms, border 2000ms;}
 
 .bouton:hover{
     background-color: rgb(72, 61, 139);
     color: rgb(211, 211, 211);
-    border: rgb(211, 211, 211) 1px solid; 
+    border: rgb(211, 211, 211) 1px solid; }
+
+#trigger {
+    position : fixed;
+    top: 25vh;
+    width: 5vh;
+    aspect-ratio: 1;
+    /*background-color: rgb(72, 61, 139);*/
+    /*border: solid;
+    border-radius: 0, 10px, 10px, 0;*/
+    background-image: url(../asset/menu2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 4px;
+    /*transition: left 1s;*/
+}
+
+#close{
+    display: none;
+    position: relative;
+    top: 2vh;
+    right: 2vh;
+
+    width: 5vh;
+    aspect-ratio: 1;
+    background-image: url(../asset/marque-de-croix.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
