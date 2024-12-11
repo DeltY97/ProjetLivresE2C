@@ -12,6 +12,7 @@ export class Morpion {
     /*<param> {HTMLElement} zoneHTML;       Fonction pour créer la zone HTML (pas recommandé car de - en - support par navigateurs?)*/
 
     constructor(zoneHTML){ /*lien entre JS, HTML et CSS (pour interactions?)*/
+        console.log("lancement du morpion");
         this.morpionZone = zoneHTML;
             this.morpionZone.setAttribute('class', 'morpion-Zone');
         

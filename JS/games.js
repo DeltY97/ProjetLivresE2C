@@ -1,15 +1,18 @@
 import { Morpion } from "./morpion.js";
 
-let menu = document.querySelector('#menuZone');
+let menu = document.querySelector('#menu');
 let gameZone = document.querySelector('#gameZone');
-/*mise en place lien avec html*/
+
+//console.log(menu, gameZone);
 
 function initialize(){
-    gameZone.innerHTML = "#gameZone";
+    gameZone.innerHTML = "";
+    console.log('INITIALE');
 }
 
 function newGame(){
     initialize();
+    console.log("activation menu");
 
     switch(menu.value){
         case "1":
