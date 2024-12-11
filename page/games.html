@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script type="module" src="../JS/test.js"></script>
+    <script type="module" src="../JS/games.js"></script>
     <script type="module" src="../JS/nav.js"></script>
 </head>
 <body>
@@ -27,16 +27,15 @@
         <a href="../page/about_us.html" class="bouton">Qui sommes-nous</a>
     </nav>
     <main>
-        <p id="results"></p>
-        <div>
-            <label for="number1">Premier nombre</label> <input type="number" name="number1" id="number1">
-        </div>
-        <div>
-            <label for="number2">Deuxième nombre</label> <input type="number" name="number2" id="number2">
-        </div>
-        <div>
-            <input type="submit" value="calculer" id="calculate">
-        </div>
+
+        <div id="menuZone"></div>
+            <label for="menu">Choix du jeu</label>
+            <select name="menuJeux" id="menu">
+                <option value="0">Faites un choix</option>
+                <option value="1">Morpion</option>
+            </select>
+        <div id="gameZone"></div>
+
     </main>
 
     <div id="trigger"></div>
