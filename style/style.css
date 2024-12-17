@@ -165,6 +165,10 @@ nav{
     border: solid 3px rgb(72, 61, 139);
     border-radius: 5px;
     margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start; /*start= param défaut*/
+    align-items: center;
 }
 
 .grid-Zone{
@@ -190,4 +194,12 @@ nav{
 }
 .square:hover{
     background-color: rgba(199, 199, 199, 0.7333);
+}
+
+#playerIcon{
+    width: 80%;
+    margin: 15px 0;
+    aspect-ratio: 1;
+    background-size: cover;
+    /*border: rgb(0, 0, 0) solid 5px;*//*pas besoin de border car pas très beau ici*/
 }
