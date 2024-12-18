@@ -124,3 +124,60 @@ CREATE TABLE IF NOT EXISTS Livres (
         FOREIGN KEY (site_id)
         REFERENCES Sites(id)
 )ENGINE=InnoDB;
+
+ALTER TABLE Livres
+ADD COLUMN user_id SMALLINT UNSIGNED;
+ALTER TABLE Livres
+ADD CONSTRAINT fk_Livres_user
+FOREIGN KEY (user_id)
+REFERENCES Users(id);
+
+/*Les jointures*/
+SELECT titre, user_id FROM Livres
+
+ /*[INNER]retire lignes sans user (livres empruntés) / affiche infos des 2 tableaux et lie les données entre elles*/
+SELECT Livres.titre, Users.pseudo FROM Livres
+    INNER JOIN Users ON Livres.user_id = Users.id;
+
+SELECT Livres.titre, Users.pseudo FROM Livres 
+    LEFT JOIN Users ON Livres.user_id = Users.id; /*[LEFT]affiche lignes tableau gauche et ajoute données du tableau droit*/
+
+SELECT Livres.titre, Users.pseudo FROM Livres 
+    RIGHT JOIN Users ON Livres.user_id = Users.id; /*[RIGHT]pareil que left mais inversé*/
+
+
+SELECT Livres.titre, Genres.name, Users.pseudo FROM Livres
+    INNER JOIN Users ON Livres.user_id = Users.id
+    LEFT JOIN Genres ON Livres.genre_id = Genres.id;
+
+
+CREATE VIEW livre_vw AS (SELECT Livres.titre, Livres.auteur, Genres.name AS genre, Livres.date_of_edition AS date, Livres.pages, Sites.name AS site, Users.pseudo, Livres.id, Livres.genre_id, Livres.site_id, Livres.user_id FROM Livres
+    LEFT JOIN Genres ON Livres.genre_id = Genres.id
+    Left JOIN Sites ON Livres.site_id = Sites.id
+    LEFT JOIN Users ON Livres.user_id = Users.id);
+
+/*Recherche*/
+
+SELECT * FROM livre_vw WHERE pages <= 100 ORDER BY pages ASC; /*ASC = Ascendant => DSC = Descendant*/
+SELECT * FROM livre_vw WHERE pages <= 100 AND/OR site="Lille" AND date > 2000 ORDER BY pages ASC; /*AND ET OR pour chercher avec plusieurs parametres */
+
+/*Relation plusieurs à plusieurs - Commentaires*/
+
+CREATE TABLE IF NOT EXISTS Comments (
+    comment TEXT NOT NULL,
+    user_id SMALLINT UNSIGNED NOT NULL,
+    livre_id SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (user_id, livre_id),
+    CONSTRAINT fk_comment_user
+        FOREIGN KEY (user_id)
+        REFERENCES Users(id),
+    CONSTRAINT fk_comment_livre
+        FOREIGN KEY (livre_id)
+        REFERENCES Livres(id)
+
+)ENGINE=InnoDB;
+
+SELECT Livres.titre, Users.pseudo, Comments.comment FROM Livres
+INNER JOIN Comments ON Livres.id = Comments.livre_id
+INNER JOIN Users ON Comments.user_id = Users.id
+WHERE Livres.id = 52; /*IDENTIFIER UN LIVRE PRÉCIS ET N'AFFICHER QUE LUI*/

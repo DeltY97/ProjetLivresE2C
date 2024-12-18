@@ -100,7 +100,7 @@ export class Morpion {
             this.victoryText = 'Victoire du Joueur 2';
         } else if (!this.isActive.includes(true)) {
             victory = true;
-            //this.victoryText = 'Match Nul';
+            this.victoryText = 'Match Nul';
         }
 
         //console.log(lineValues);
