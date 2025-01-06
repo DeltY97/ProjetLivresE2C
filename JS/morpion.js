@@ -2,7 +2,7 @@ export class Morpion {
 
     morpionZone;
     infoZone;
-    gridZone
+    gridZone;   
     /*Elements du HTML*/
 
     squareNumber = 9;
@@ -56,7 +56,7 @@ export class Morpion {
                 this.squares[i].addEventListener('click', this.squareClick.bind(this, i));}
     }
 
-    squareClick(i){ /*image quand click sur case (/!\ 1 seule image ? -> sûrement fonction pour 2 images pas encore faite)*/
+    squareClick(i){
         if(this.isActive[i]){
 
         if(this.playerOne){

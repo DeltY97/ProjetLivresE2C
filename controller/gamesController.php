@@ -1,3 +1,27 @@
+<?php
+    $title = "Espace détente";
+    $subtitle = "GameZone";
+    $navButtons = [
+        [
+            "label" => "Accueil",
+            "path" => "../controller/homeController.php"
+        ],
+        [
+            "label" => "Bibliothèque",
+            "path" => "../controller/libraryController.php"
+        ],
+        [
+            "label" => "Espace détente",
+            "path" => "../controller/gamesController.php"
+        ],
+        [
+            "label" => "Qui sommes-nous?",
+            "path" => "../controller/aboutUsController.php"
+        ],
+    ];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +36,11 @@
     <script type="module" src="../JS/nav.js"></script>
 </head>
 <body>
-    <header>
-        <img src="../asset/logo.png" alt="logo E2C-silence on lit" id="logo">
-        <div id="titre">
-        <h1>Silence on lit ! - E2C</h1>
-        <h2>Time to play</h2>
-        </div>
-    </header>
-    <nav>
-        <div id="close"></div>
-        <a href="../index.html" class="bouton">Accueil</a>
-        <a href="../page/library.html" class="bouton">Bibliothèque</a>
-        <a href="../page/games.html" class="bouton">Espace détente</a>
-        <a href="../page/about_us.html" class="bouton">Qui sommes-nous</a>
-    </nav>
+    <?php
+        require_once("../module/_header.php");
+        require_once("../module/_nav.php");
+    ?>
+    
     <main>
 
         <div id="menuZone"></div>

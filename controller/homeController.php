@@ -1,28 +1,53 @@
+<?php
+    $isLogged = true;
+    $title = "Silence on lit ! - E2C";
+    $subtitle = "Explorez votre imaginaire";
+    $navButtons = [
+        [
+            "label" => "Accueil",
+            "path" => "../controller/homeController.php"
+        ],
+        [
+            "label" => "Bibliothèque",
+            "path" => "../controller/libraryController.php"
+        ],
+        [
+            "label" => "Espace détente",
+            "path" => "../controller/gamesController.php"
+        ],
+        [
+            "label" => "Qui sommes-nous?",
+            "path" => "../controller/aboutUsController.php"
+        ],
+    ];
+
+    if($isLogged) {
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"];
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silence on lit</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="../JS/nav.js"></script>
 </head>
 <body>
-    <header>
-        <img src="./asset/logo.png" alt="logo E2C-silence on lit" id="logo">
-        <div id="titre">
-        <h1>Silence on lit ! - E2C</h1>
-        <h2>Explorez vote imaginaire</h2>
-        </div>
-    </header>
-    <nav>
-        <a href="./index.html" class="bouton">Accueil</a>
-        <a href="./page/library.html" class="bouton">Bibliothèque</a>
-        <a href="./page/games.html" class="bouton">Espace détente</a>
-        <a href="./page/about_us.html" class="bouton">Qui sommes-nous</a>
-    </nav>
+    
+    <?php
+        require_once("../module/_header.php");
+        require_once("../module/_nav.php");
+    ?>
+
     <main>
         
     
@@ -64,7 +89,8 @@
         </ul>
     
             <p>En intégrant <em>Silence, on lit !</em> dans les pratiques de l’E2C de Lille, on contribue à faire de la lecture une habitude pour les jeunes, les aidant à s’épanouir personnellement et professionnellement.</p>
-            </article>
+        </article>
 </main>
+        <div id="trigger"></div>
 </body>
 </html> 
