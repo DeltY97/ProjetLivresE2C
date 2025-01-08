@@ -20,7 +20,7 @@ header {
     align-items: stretch;
     justify-content: space-between;
 
-    color: rgb(232, 235, 72);
+    
     background-color: rgb(72, 61, 139);
     height: 20vh;
 
@@ -42,6 +42,7 @@ h1, h2{
     align-items: center;
     justify-content: space-evenly;
     width: 60%;
+    color: rgb(232, 235, 72);
     /*margin-right: 20%;*/}
 
 #logForm{
@@ -227,6 +228,7 @@ nav{
     justify-content: space-between;
     align-items: stretch;
     margin: 7px 10px;
+    color: rgb(232, 235, 72);
 }
 
 .formLine>*{
@@ -247,4 +249,12 @@ nav{
     background-color: rgb(72, 61, 139);
     color: rgb(211, 211, 211);
     border: rgb(211, 211, 211) 1px solid;
+}
+
+.message{
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(rgb(255, 28, 28));
+    font-size: small;
 }

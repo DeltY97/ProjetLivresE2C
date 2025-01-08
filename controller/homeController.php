@@ -1,5 +1,6 @@
 <?php
-    $isLogged = true;
+session_start();
+    
     $title = "Silence on lit ! - E2C";
     $subtitle = "Explorez votre imaginaire";
     $navButtons = [
@@ -21,7 +22,7 @@
         ]
     ];
 
-    if($isLogged) {
+    if($_SESSION["id"]) {
         $navButtons[]= [
             "label" => "Mon compte",
             "path" => "../controller/accountController.php"];

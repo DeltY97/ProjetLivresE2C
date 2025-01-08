@@ -1,4 +1,5 @@
 <?php
+session_start();
     //$username = (isset($_POST["username"]))?$_POST["username"]:"inconnu";     mettre inconnu si username pas défini (si pas passé par chemain de log par exemple)
     
     $isLogged = true;
@@ -23,7 +24,7 @@
         ],
     ];
 
-    if($isLogged) {
+    if($_SESSION["id"]) {
         $navButtons[]= [
             "label" => "Mon compte",
             "path" => "../controller/accountController.php"];

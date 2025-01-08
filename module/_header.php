@@ -6,8 +6,8 @@
         </div>
         <div id="logForm">
             <?php
-                if(isset($_POST["username"])){
-                    $username = $_POST["username"]
+                if(isset($_SESSION["id"])){
+                    $username = $_SESSION["pseudo"];
             ?>
                 <p><?= "Bonjour $username" ?></p>
             <?php
@@ -22,6 +22,13 @@
                     <label for="password">Mot de passe</label>
                     <input type="password" name="password" id="password" required>
                 </div>
+                <?php
+                    if(isset($_GET["message"])){
+                        ?>
+                            <div class="message"><?= $_GET["message"] ?></div>
+                        <?php
+                    }
+                ?>
                 <div class="formLine">
                     <input type="submit" value="Me connecter à mon compte" class="loginBouton">
                 </div>

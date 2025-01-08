@@ -1,4 +1,5 @@
 <?php
+session_start();
     $isLogged = true;
     $title = "Espace détente";
     $subtitle = "GameZone";
@@ -21,7 +22,7 @@
         ],
     ];
 
-    if($isLogged) {
+    if($_SESSION["id"]) {
         $navButtons[]= [
             "label" => "Mon compte",
             "path" => "../controller/accountController.php"];

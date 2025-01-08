@@ -1,4 +1,5 @@
 <?php
+session_start();
     $isLogged = true;
     $title = "Qui sommes-nous ?";
     $subtitle = "Q&A";
@@ -21,10 +22,9 @@
         ],
     ];
 
-    if($isLogged) {
+    if($_SESSION["id"]) {
         $navButtons[]= [
             "label" => "Mon compte",
             "path" => "../controller/accountController.php"];
     }
-
     require_once("../view/aboutUsView.php");
